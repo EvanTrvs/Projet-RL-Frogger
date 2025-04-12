@@ -1,0 +1,78 @@
+{
+    "name": "TRPO_result",
+    "algorithm": "trpo",
+    "output_dir": "experiments",
+    "device": "cuda",
+    "seed": 42,
+    "env": {
+        "name": "ALE/Frogger-v5",
+        "render_mode": "rgb_array",
+        "max_episode_steps": 250,
+        "reward_shaping": "classic",
+        "EpisodicLifeEnv": true
+    },
+    "preprocessing": {
+        "rognage_bords": true,
+        "grayscale": true,
+        "flou": [ 0, 0 ],
+        "downscaling": [ 48, 56 ],
+        "centrer_grenouille": [ 0, 0, [0, 0, 0] ],
+        "mappage_pixels": false,
+        "frame_stacking": 1,
+        "frame_skip": "none",
+        "extract_features": false 
+    },
+    "dqn": {
+        "hyperparameters": {
+            "epsilon_decay": 0.9997,
+            "minimum_epsilon": 0.05,
+            "learning_rate": 0.00015,
+            "target_update": 1000,
+            "gamma": 0.98,
+            "soft_update": true,
+            "tau": 0.025,
+            "optimizer": "adam",
+            "loss_fn": "mse",
+            "grad_clip": 5.0,
+            "steps_frequency_update": 2
+        },
+        "network": {
+            "network_type": "cnn",
+            "dropout": 0.2,
+            "num_features": 0
+        },
+        "memory": {
+            "type": "prioritized",
+            "buffer_size": 150000,
+            "batch_size": 32,
+            "alpha": 0.6,
+            "beta": 0.4,
+            "prior_eps": 0.00001
+        }
+    },
+    "trpo": {
+        "hyperparameters": {
+            "max_kl": 1e-2,
+            "damping": 1e-2,
+            "l2_reg": 1e-3,
+            "use_fim": true,
+            "gamma": 0.98,
+            "tau": 0.95,
+            "batch_size": 64
+        }
+    },
+    "training": {
+        "max_training_steps": 1000000,
+        "eval_interval_steps": 100000,
+        "log_every_n_episodes": 20,
+        "dual_model_road_river": false
+    },
+    "evaluate": {
+        "save_checkpoint": false,
+        "num_parties": 20,
+        "env_gif": false,
+        "observation_gif": false,
+        "trace_actions": true,
+        "gif_fps": 3
+    }
+}

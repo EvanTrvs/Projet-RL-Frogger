@@ -1,0 +1,12 @@
+ale_py==0.10.1
+gym==0.26.2
+gymnasium==1.0.0
+imageio==2.36.1
+matplotlib==3.8.4
+numpy==2.2.4
+opencv_python==4.11.0.86
+pandas==2.2.3
+sb3_contrib==2.6.0
+scipy==1.15.2
+seaborn==0.13.2
+stable_baselines3==2.6.0
