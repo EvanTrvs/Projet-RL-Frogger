@@ -73,8 +73,11 @@ python learning_csv_curve.py experiments\TRPO_exemple\TRPO_results_exemple.csv
 
 ## Exemples
 
-Voici un exemple de courbe générée à partir des données d'entraînement :     
-![Courbe d'apprentissage](results/Comparaison_FCNN_CNN_TRPO.png)
+Voici un exemple de courbe de l'évolution de la performance de hauteur atteinte au cours de l'entrainement :     
+![Courbe d'apprentissage](results/Comparaison_FCNN_CNN_TRPO.png)    
+
+Impact du preprocessing sur la capacité a généralisé rapidement la partie Route:
+![Courbe d'apprentissage](results/DQN_Rainbow_Preprocessing_Compare.png)
 
 Voici un exemple vidéos montrant un agent entraîné en action :     
 ![Exemple dans l'environnement après entrainement d'un agent](results/exemple_victoire_env.gif)      
