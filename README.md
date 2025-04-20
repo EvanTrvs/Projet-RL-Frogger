@@ -28,16 +28,12 @@ Il va falloir créer l'environnement (étape 1)) ce qui peut prendre quelque min
 
 
 1) Créer l'environnement virtuel du projet:
-python -m venv environnement_projet && environnement_projet\Scripts\activate && pip install --no-index --find-links=packages -r requirements.txt
-
-2) Lancer l'environnement:
-.\environnement_projet\Scripts\activate
-
-
-3) Executer l'un des deux modèles:
-python run.py config.json
-
-
+```bash
+git clone https://github.com/EvanTrvs/Projet-RL-Frogger.git
+python -m venv environnement_projet
+environnement_projet\Scripts\activate
+pip install --no-index -r requirements.txt
+```
 
 ## Utilisation
 
@@ -76,7 +72,7 @@ python learning_csv_curve.py experiments\TRPO_exemple\TRPO_results_exemple.csv
 Voici un exemple de courbe de l'évolution de la performance de hauteur atteinte au cours de l'entrainement :     
 ![Courbe d'apprentissage](results/Comparaison_FCNN_CNN_TRPO.png)    
 
-Impact du preprocessing sur la capacité a généralisé rapidement la partie Route:
+Impact du preprocessing sur la capacité a généraliser rapidement la partie Route:
 ![Courbe d'apprentissage](results/DQN_Rainbow_Preprocessing_Compare.png)
 
 Voici un exemple vidéos montrant un agent entraîné en action :     
